@@ -1,0 +1,35 @@
+{
+    "main": "./dist/boundle.js",
+    "version": "1.0.0",
+    "name": "node-youtube-search",
+    "description": "Youtube API client written in typescript (only for searching).",
+    "keywords": [
+        "youtube",
+        "search",
+        "api",
+        "typescript"
+    ],
+    "homepage": "https://github.com/LacticWhale/node-youtube-search#readme",
+    "bugs": {
+        "url": "https://github.com/LacticWhale/node-youtube-search/issues",
+        "email": "lacticwhale@azura.site"
+    },
+    "license": "MIT",
+    "author": "LacticWhale <lacticwhale@azura.site>",
+    "repository": "github:LacticWhale/youtube-search",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "rollup -c"
+    },
+    "devDependencies": {
+        "@rollup/plugin-commonjs": "^11.1.0",
+        "@rollup/plugin-node-resolve": "^7.1.3",
+        "@rollup/plugin-typescript": "^4.1.1",
+        "@types/node": "^13.13.2",
+        "rollup": "^2.10.2",
+        "rollup-plugin-terser": "^5.3.0",
+        "tslib": "^2.0.0",
+        "typescript": "^3.9.2"
+    },
+    "types": "./index.d.ts"
+}
