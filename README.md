@@ -19,7 +19,7 @@ import { Youtube, } from 'node-youtube-search'
 ```js
 const youtubeApi = new Youtube('google api key');
 
-youtubeApi.getPlaylistVideosIdsByPlaylistId('playlistId')	// Promise<string[]>;
+youtubeApi.getPlaylistVideosIdsByPlaylistId('playlistId')	// Promise<string>;
 		
 youtubeApi.getPlaylistsByIds('playlistsId,playlistsId')		// Promise<Playlist[]>
 youtubeApi.getPlaylistsByIds(['playlistsId', 'playlistsId'])	// Promise<Playlist[]>
