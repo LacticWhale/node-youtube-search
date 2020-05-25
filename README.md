@@ -19,20 +19,20 @@ import { Youtube, } from 'node-youtube-search'
 ```js
 const youtubeApi = new Youtube('google api key');
 
-youtubeApi.getPlaylistVideosIdsByPlaylistId('playlistId')   // Promise<string[]>;
+youtubeApi.getPlaylistVideosIdsByPlaylistId('playlistId')	// Promise<string>;
 		
-youtubeApi.getPlaylistsByIds('playlistsId,playlistsId')     // Promise<Playlist[]>
-youtubeApi.getPlaylistsByIds(['playlistsId', 'playlistsId'])// Promise<Playlist[]>
+youtubeApi.getPlaylistsByIds('playlistsId,playlistsId')		// Promise<Playlist[]>
+youtubeApi.getPlaylistsByIds(['playlistsId', 'playlistsId'])	// Promise<Playlist[]>
 
-youtubeApi.getPlaylistVideosByPlaylistId('playlistId')      // Promise<Video[]>
+youtubeApi.getPlaylistVideosByPlaylistId('playlistId')		// Promise<Video[]>
 
-youtubeApi.getChannelsByIds('channelsId,channelsId')        // Promise<Channel[]>
-youtubeApi.getChannelsByIds(['channelsId', 'channelsId'])   // Promise<Channel[]>
+youtubeApi.getChannelsByIds('channelsId,channelsId')		// Promise<Channel[]>
+youtubeApi.getChannelsByIds(['channelsId', 'channelsId'])	// Promise<Channel[]>
 
-youtubeApi.getVideosByIds('videosIds,videosIds')            // Promise<Video[]>
-youtubeApi.getVideosByIds(['videosIds', 'videosIds'])       // Promise<Video[]>
+youtubeApi.getVideosByIds('videosId,videosId')			// Promise<Video[]>
+youtubeApi.getVideosByIds(['videosId', 'videosId'])		// Promise<Video[]>
 
-youtubeApi.getRelatedToVideoId('videosId')                  // Promise<Video[]>
+youtubeApi.getRelatedToVideoId('videosId')			// Promise<Video[]>
 
-youtubeApi.search('search')                          		// Promise<Video[]>
+youtubeApi.search('search')					// Promise<Video[]>
 ```
