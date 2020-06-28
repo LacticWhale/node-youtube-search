@@ -1,6 +1,6 @@
 {
     "main": "./dist/boundle.js",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "name": "node-youtube-search",
     "description": "Youtube API client written in typescript (only for searching).",
     "keywords": [
