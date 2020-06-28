@@ -1,6 +1,6 @@
 {
     "main": "./dist/boundle.js",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "name": "node-youtube-search",
     "description": "Youtube API client written in typescript (only for searching).",
     "keywords": [
@@ -16,7 +16,7 @@
     },
     "license": "MIT",
     "author": "LacticWhale <lacticwhale@azura.site>",
-    "repository": "github:LacticWhale/youtube-search",
+    "repository": "github:LacticWhale/node-youtube-search",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "build": "rollup -c"
