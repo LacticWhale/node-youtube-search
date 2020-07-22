@@ -12,11 +12,12 @@ export class Youtube {
 
 			do {
 				let res;
-				
+
 				try {
 					res = await this.request('playlistItems', {
 						part: 'contentDetails',
 						maxResults: 50,
+						pageToken: nextPageToken,
 						playlistId,
 					})
 				} catch (e) {
@@ -29,16 +30,16 @@ export class Youtube {
 				ids.push(...items.map(a => a.contentDetails.videoId))
 				if(res.nextPageToken) nextPageToken = res.nextPageToken;
 				else nextPageToken = '';
-				
+
 			} while(nextPageToken != '')
-			
+
 			resolve(ids)
 		})
 	}
 
 	public getPlaylistsByIds(playlistsIds: string): Promise<Playlist[]>;
 	public getPlaylistsByIds(playlistsIds: string[]): Promise<Playlist[]>;
-	
+
 	public getPlaylistsByIds(playlistsIds: string | string[]): Promise<Playlist[]> {
 		return this.getListByIds('playlists', playlistsIds)
 	}
@@ -76,7 +77,7 @@ export class Youtube {
 				reject(e);
 				return;
 			}
-			
+
 			let items = res.items as SearchItem[];
 
 			let ids = items.map((item: SearchItem) => item.id.videoId);
@@ -119,7 +120,7 @@ export class Youtube {
 
 			for(let reqIds of _ids) {
 				let res;
-				
+
 				try {
 					res = await this.request(method, {
 						part: 'id,snippet,contentDetails',
@@ -130,7 +131,7 @@ export class Youtube {
 					reject(e);
 					return;
 				}
-				
+
 				let items = res.items as Video[];
 
 				list.push(...items);
@@ -147,7 +148,7 @@ export class Youtube {
         		path: `/youtube/v3/${method}?${stringify(options)}&key=${this.apiKey}`
 			}, res => {
 				let body = '';
-				
+
 				res.on('data', chank => body += chank)
 				.on('close', () => {
 					const r = JSON.parse(body);
@@ -173,7 +174,7 @@ export class Youtube {
 
 		let subarray: string[][] = new Array(Math.ceil(arr.length/size));
 
-		for (let i = 0; i < Math.ceil(arr.length/size); i++) 
+		for (let i = 0; i < Math.ceil(arr.length/size); i++)
 			subarray[i] = arr.slice((i*size), (i*size) + size);
 
 		return subarray;
